@@ -151,6 +151,40 @@ export const projects = [
     techStack: ["Python", "YOLOv5", "Computer Vision", "PyTorch"],
   },
   {
+    id: "remainder",
+    title: "Remainder — Tasks, Reminders & Notes",
+    description:
+      "Offline-first Reminder, Tasks, and Notes app for Android and iOS using Expo, React Native, TypeScript, Zustand, SQLite, and Expo Notifications.",
+    longDescription:
+      "A cross-platform productivity app built with Expo and React Native. Features offline-first architecture with SQLite local storage, task CRUD with daily/weekly/monthly completion resets, local notification scheduling with snooze actions, and note management. Built with Zustand for state management and designed for future Supabase sync.",
+    image: "/projects/remainder.jpg",
+    tags: ["React Native", "TypeScript", "Expo", "SQLite"],
+    features: [
+      "Bottom tabs: Tasks, Reminders, Notes, Settings",
+      "Task CRUD with daily/weekly/monthly completion reset logic",
+      "Reminder CRUD with local notification scheduling and snooze",
+      "Notes CRUD with search, category filters, and sorting",
+      "Light, dark, and system theme support",
+      "Offline-first with SQLite local storage",
+    ],
+    challenges:
+      "Implementing reliable local notification scheduling with cross-platform consistency",
+    solutions:
+      "Used Expo Notifications with a dedicated notification service layer and snooze action handling",
+    performance:
+      "Instant local data access with SQLite; offline-first ensures no network dependency",
+    github: "https://github.com/ALOKTV/remainder",
+    live: "https://aloktv.github.io/remainder/",
+    techStack: [
+      "React Native",
+      "TypeScript",
+      "Expo",
+      "Zustand",
+      "SQLite",
+      "Expo Notifications",
+    ],
+  },
+  {
     id: "job-dashboard",
     title: "Job Search Dashboard",
     description: "Aggregated job listings from multiple platforms with filters for skills, experience, and location using a Node.js backend.",
