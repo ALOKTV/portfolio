@@ -24,7 +24,7 @@ export function ContactSection() {
 
   return (
     <section id="contact" className="section-padding relative">
-      <div className="absolute inset-0 bg-gradient-to-t from-teal-50/30 via-transparent to-transparent pointer-events-none" />
+      <div className="absolute inset-0 bg-gradient-to-t from-teal-50/30 via-transparent to-transparent dark:from-teal-950/30 pointer-events-none" />
 
       <div className="container-width relative z-10">
         <SectionHeader
@@ -51,7 +51,7 @@ export function ContactSection() {
                     type="text"
                     required
                     placeholder="Your name"
-                    className="w-full px-4 py-3 rounded-lg border border-border bg-white text-foreground placeholder:text-muted-light focus:outline-none focus:ring-2 focus:ring-accent/20 focus:border-accent transition-all shadow-sm"
+                    className="w-full px-4 py-3 rounded-lg border border-border bg-white dark:bg-slate-900 text-foreground placeholder:text-muted-light focus:outline-none focus:ring-2 focus:ring-accent/20 focus:border-accent transition-all shadow-sm"
                   />
                 </div>
                 <div>
@@ -63,7 +63,7 @@ export function ContactSection() {
                     type="email"
                     required
                     placeholder="your@email.com"
-                    className="w-full px-4 py-3 rounded-lg border border-border bg-white text-foreground placeholder:text-muted-light focus:outline-none focus:ring-2 focus:ring-accent/20 focus:border-accent transition-all shadow-sm"
+                    className="w-full px-4 py-3 rounded-lg border border-border bg-white dark:bg-slate-900 text-foreground placeholder:text-muted-light focus:outline-none focus:ring-2 focus:ring-accent/20 focus:border-accent transition-all shadow-sm"
                   />
                 </div>
               </div>
@@ -76,7 +76,7 @@ export function ContactSection() {
                   type="text"
                   required
                   placeholder="What's this about?"
-                  className="w-full px-4 py-3 rounded-lg border border-border bg-white text-foreground placeholder:text-muted-light focus:outline-none focus:ring-2 focus:ring-accent/20 focus:border-accent transition-all shadow-sm"
+                  className="w-full px-4 py-3 rounded-lg border border-border bg-white dark:bg-slate-900 text-foreground placeholder:text-muted-light focus:outline-none focus:ring-2 focus:ring-accent/20 focus:border-accent transition-all shadow-sm"
                 />
               </div>
               <div>
@@ -88,7 +88,7 @@ export function ContactSection() {
                   required
                   rows={5}
                   placeholder="Your message..."
-                  className="w-full px-4 py-3 rounded-lg border border-border bg-white text-foreground placeholder:text-muted-light focus:outline-none focus:ring-2 focus:ring-accent/20 focus:border-accent transition-all shadow-sm resize-none"
+                  className="w-full px-4 py-3 rounded-lg border border-border bg-white dark:bg-slate-900 text-foreground placeholder:text-muted-light focus:outline-none focus:ring-2 focus:ring-accent/20 focus:border-accent transition-all shadow-sm resize-none"
                 />
               </div>
               <button
@@ -114,11 +114,11 @@ export function ContactSection() {
             transition={{ duration: 0.5, delay: 0.1 }}
             className="space-y-5"
           >
-            <div className="rounded-xl border border-border bg-white shadow-sm p-6">
+            <div className="rounded-xl border border-border bg-white dark:bg-slate-900 shadow-sm p-6">
               <h3 className="font-bold text-foreground mb-5">Contact Information</h3>
               <div className="space-y-5">
                 <div className="flex items-center gap-4 text-sm text-muted">
-                  <div className="w-10 h-10 rounded-lg bg-teal-50 flex items-center justify-center shrink-0">
+                  <div className="w-10 h-10 rounded-lg bg-teal-50 dark:bg-teal-950 flex items-center justify-center shrink-0">
                     <MapPin className="w-4 h-4 text-accent" />
                   </div>
                   <div>
@@ -127,7 +127,7 @@ export function ContactSection() {
                   </div>
                 </div>
                 <div className="flex items-center gap-4 text-sm text-muted">
-                  <div className="w-10 h-10 rounded-lg bg-teal-50 flex items-center justify-center shrink-0">
+                  <div className="w-10 h-10 rounded-lg bg-teal-50 dark:bg-teal-950 flex items-center justify-center shrink-0">
                     <Mail className="w-4 h-4 text-accent" />
                   </div>
                   <div>
@@ -138,7 +138,7 @@ export function ContactSection() {
               </div>
             </div>
 
-            <div className="rounded-xl border border-border bg-white shadow-sm p-6">
+            <div className="rounded-xl border border-border bg-white dark:bg-slate-900 shadow-sm p-6">
               <h3 className="font-bold text-foreground mb-4">Connect With Me</h3>
               <div className="flex flex-wrap gap-3">
                 {socialLinks.map((link) => (
@@ -147,7 +147,7 @@ export function ContactSection() {
                     href={link.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center gap-2 px-4 py-2.5 rounded-lg border border-border bg-white text-sm font-medium text-muted hover:text-accent hover:border-teal-200 hover:bg-teal-50/30 transition-all shadow-sm"
+                    className="flex items-center gap-2 px-4 py-2.5 rounded-lg border border-border bg-white dark:bg-slate-900 text-sm font-medium text-muted hover:text-accent hover:border-teal-200 hover:bg-teal-50/30 dark:hover:bg-teal-950/30 transition-all shadow-sm"
                   >
                     <link.icon className="w-4 h-4" />
                     {link.label}

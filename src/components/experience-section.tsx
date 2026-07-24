@@ -28,9 +28,9 @@ export function ExperienceSection() {
                 transition={{ duration: 0.5, delay: i * 0.1 }}
                 className="relative pl-12 md:pl-16"
               >
-                <div className="absolute left-2.5 md:left-[7px] top-2 w-3 h-3 rounded-full bg-white border-2 border-accent shadow-sm shadow-teal-200/50" />
+                <div className="absolute left-2.5 md:left-[7px] top-2 w-3 h-3 rounded-full bg-white dark:bg-slate-900 border-2 border-accent shadow-sm shadow-teal-200/50 dark:shadow-teal-900/50" />
 
-                <div className="rounded-xl border border-border bg-white shadow-sm p-6 md:p-8 hover:shadow-md hover:border-teal-200 transition-all">
+                <div className="rounded-xl border border-border bg-white dark:bg-slate-900 shadow-sm p-6 md:p-8 hover:shadow-md hover:border-teal-200 transition-all">
                   <div className="flex items-center gap-2 text-accent text-xs font-medium mb-3">
                     <Calendar className="w-3.5 h-3.5" />
                     {exp.duration}
@@ -52,7 +52,7 @@ export function ExperienceSection() {
                     {exp.technologies.map((tech) => (
                       <span
                         key={tech}
-                        className="text-xs px-3 py-1 rounded-full bg-teal-50 text-accent font-medium"
+                        className="text-xs px-3 py-1 rounded-full bg-teal-50 dark:bg-teal-950 text-accent font-medium"
                       >
                         {tech}
                       </span>

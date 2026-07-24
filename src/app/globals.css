@@ -42,12 +42,24 @@ html {
   scroll-behavior: smooth;
 }
 
+.dark {
+  --color-background: #0b1120;
+  --color-surface: #111827;
+  --color-surface-hover: #1e293b;
+  --color-border: #1e293b;
+  --color-border-light: #1e293b;
+  --color-foreground: #f1f5f9;
+  --color-muted: #94a3b8;
+  --color-muted-light: #64748b;
+}
+
 body {
   background-color: var(--color-background);
   color: var(--color-foreground);
   font-family: var(--font-sans);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 ::selection {
@@ -78,8 +90,22 @@ body {
   -webkit-text-fill-color: transparent;
 }
 
+.dark .gradient-text {
+  background: linear-gradient(135deg, #2dd4bf, #14b8a6);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
 .gradient-text-orange {
   background: linear-gradient(135deg, #c2410c, #fb923c);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.dark .gradient-text-orange {
+  background: linear-gradient(135deg, #fb923c, #fdba74);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;

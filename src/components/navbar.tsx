@@ -2,12 +2,17 @@
 
 import { useState, useEffect } from "react"
 import { motion, AnimatePresence } from "framer-motion"
-import { Menu, X } from "lucide-react"
+import { useTheme } from "next-themes"
+import { Menu, X, Sun, Moon } from "lucide-react"
 import { navLinks, personalInfo } from "@/data/portfolio"
 
 export function Navbar() {
   const [scrolled, setScrolled] = useState(false)
   const [mobileOpen, setMobileOpen] = useState(false)
+  const [mounted, setMounted] = useState(false)
+  const { theme, setTheme } = useTheme()
+
+  useEffect(() => setMounted(true), [])
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 40)
@@ -21,7 +26,9 @@ export function Navbar() {
       animate={{ y: 0 }}
       transition={{ duration: 0.5, ease: "easeOut" }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled ? "bg-white/80 backdrop-blur-md border-b border-border shadow-sm" : "bg-transparent"
+        scrolled
+          ? "bg-white/80 dark:bg-slate-900/80 backdrop-blur-md border-b border-border shadow-sm"
+          : "bg-transparent"
       }`}
     >
       <div className="container-width flex items-center justify-between px-4 md:px-8 h-16 md:h-20">
@@ -43,7 +50,14 @@ export function Navbar() {
           ))}
         </nav>
 
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-2">
+          <button
+            onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+            className="w-10 h-10 rounded-lg border border-border flex items-center justify-center hover:bg-surface-hover transition-colors cursor-pointer"
+            aria-label="Toggle theme"
+          >
+            {mounted && theme === "dark" ? <Sun className="w-4 h-4" /> : <Moon className="w-4 h-4" />}
+          </button>
           <a href="#contact" className="btn-primary text-sm hidden md:inline-flex">
             Get in Touch
           </a>
@@ -63,7 +77,7 @@ export function Navbar() {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
-            className="md:hidden bg-white border-t border-border overflow-hidden shadow-lg"
+            className="md:hidden bg-white dark:bg-slate-900 border-t border-border overflow-hidden shadow-lg"
           >
             <nav className="flex flex-col px-4 py-6 gap-2">
               {navLinks.map((link) => (

@@ -7,7 +7,7 @@ import { blogPosts } from "@/data/portfolio"
 
 export function BlogSection() {
   return (
-    <section className="section-padding bg-white/40 relative">
+    <section className="section-padding bg-white/40 dark:bg-slate-900/40 relative">
       <div className="container-width">
         <SectionHeader
           label="Blog"
@@ -23,10 +23,10 @@ export function BlogSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
               transition={{ duration: 0.4, delay: i * 0.1 }}
-              className="group rounded-xl border border-border bg-white shadow-sm p-6 hover:shadow-md hover:border-teal-200 transition-all cursor-pointer"
+              className="group rounded-xl border border-border bg-white dark:bg-slate-900 shadow-sm p-6 hover:shadow-md hover:border-teal-200 transition-all cursor-pointer"
             >
               <div className="flex items-center gap-2 text-xs text-muted mb-4">
-                <span className="px-2.5 py-0.5 rounded-full bg-teal-50 text-accent font-medium">
+                <span className="px-2.5 py-0.5 rounded-full bg-teal-50 dark:bg-teal-950 text-accent font-medium">
                   {post.category}
                 </span>
                 <span className="flex items-center gap-1">

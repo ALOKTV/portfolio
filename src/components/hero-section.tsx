@@ -8,9 +8,9 @@ import { personalInfo, typingTexts } from "@/data/portfolio"
 export function HeroSection() {
   return (
     <section className="relative min-h-screen flex items-center overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-b from-teal-50/40 via-transparent to-transparent pointer-events-none" />
-      <div className="absolute top-1/4 right-0 w-96 h-96 bg-teal-100/30 rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute bottom-1/4 left-0 w-80 h-80 bg-orange-100/20 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute inset-0 bg-gradient-to-b from-teal-50/40 dark:from-teal-900/20 via-transparent to-transparent pointer-events-none" />
+      <div className="absolute top-1/4 right-0 w-96 h-96 bg-teal-100/30 dark:bg-teal-500/10 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute bottom-1/4 left-0 w-80 h-80 bg-orange-100/20 dark:bg-orange-500/10 rounded-full blur-3xl pointer-events-none" />
 
       <div className="container-width w-full px-4 md:px-8 relative z-10">
         <div className="grid md:grid-cols-2 gap-16 items-center pt-24">
@@ -71,11 +71,11 @@ export function HeroSection() {
           >
             <div className="relative w-[420px] h-[420px] lg:w-[500px] lg:h-[500px]">
               <motion.div
-                className="absolute inset-4 rounded-2xl bg-gradient-to-br from-teal-400/20 via-teal-50 to-orange-100/30 border border-teal-200/50"
+                className="absolute inset-4 rounded-2xl bg-gradient-to-br from-teal-400/20 via-teal-50 dark:via-teal-950 to-orange-100/30 dark:to-orange-950/30 border border-teal-200/50 dark:border-teal-800/50"
                 animate={{ rotate: [0, 2, -1, 0] }}
                 transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
               >
-                <div className="absolute inset-8 rounded-xl bg-white/60 backdrop-blur-sm border border-teal-100/50 flex items-center justify-center">
+                <div className="absolute inset-8 rounded-xl bg-white/60 dark:bg-slate-900/60 backdrop-blur-sm border border-teal-100/50 dark:border-teal-800/50 flex items-center justify-center">
                   <div className="text-center">
                     <div className="w-28 h-28 rounded-xl bg-gradient-to-br from-teal-500 to-teal-600 mx-auto mb-5 flex items-center justify-center shadow-lg shadow-teal-200/50">
                       <span className="text-5xl font-bold text-white">A</span>
@@ -95,7 +95,7 @@ export function HeroSection() {
               </motion.div>
 
               <motion.div
-                className="absolute -bottom-4 -left-4 px-5 py-3 rounded-lg bg-white shadow-lg border border-teal-100"
+                className="absolute -bottom-4 -left-4 px-5 py-3 rounded-lg bg-white dark:bg-slate-800 shadow-lg border border-teal-100 dark:border-teal-800"
                 animate={{ y: [0, 6, 0] }}
                 transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 1 }}
               >
@@ -106,7 +106,7 @@ export function HeroSection() {
               </motion.div>
 
               <motion.div
-                className="absolute top-1/3 -right-8 px-4 py-2.5 rounded-lg bg-white shadow-lg border border-orange-100"
+                className="absolute top-1/3 -right-8 px-4 py-2.5 rounded-lg bg-white dark:bg-slate-800 shadow-lg border border-orange-100 dark:border-orange-800"
                 animate={{ y: [0, -8, 0] }}
                 transition={{ duration: 4.5, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
               >

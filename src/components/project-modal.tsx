@@ -44,11 +44,11 @@ export function ProjectModal({ project, onClose }: ProjectModalProps) {
           exit={{ opacity: 0, scale: 0.95, y: 20 }}
           transition={{ duration: 0.3, ease: "easeOut" }}
           onClick={(e) => e.stopPropagation()}
-          className="relative w-full max-w-3xl max-h-[85vh] overflow-y-auto bg-white rounded-xl p-6 md:p-8 shadow-2xl border border-border"
+          className="relative w-full max-w-3xl max-h-[85vh] overflow-y-auto bg-white dark:bg-slate-900 rounded-xl p-6 md:p-8 shadow-2xl border border-border"
         >
           <button
             onClick={onClose}
-            className="absolute top-4 right-4 w-8 h-8 rounded-lg border border-border flex items-center justify-center hover:bg-surface-hover transition-colors cursor-pointer bg-white"
+            className="absolute top-4 right-4 w-8 h-8 rounded-lg border border-border flex items-center justify-center hover:bg-surface-hover transition-colors cursor-pointer bg-white dark:bg-slate-900"
             aria-label="Close modal"
           >
             <X className="w-4 h-4" />
@@ -60,7 +60,7 @@ export function ProjectModal({ project, onClose }: ProjectModalProps) {
                 {project.tags.map((tag) => (
                   <span
                     key={tag}
-                    className="text-xs px-2.5 py-0.5 rounded-full bg-teal-50 text-accent font-medium"
+                    className="text-xs px-2.5 py-0.5 rounded-full bg-teal-50 dark:bg-teal-950 text-accent font-medium"
                   >
                     {tag}
                   </span>
@@ -70,7 +70,7 @@ export function ProjectModal({ project, onClose }: ProjectModalProps) {
               <p className="text-muted">{project.longDescription}</p>
             </div>
 
-            <div className="h-48 md:h-64 rounded-xl bg-gradient-to-br from-teal-50 via-white to-orange-50 flex items-center justify-center border border-teal-100/50">
+            <div className="h-48 md:h-64 rounded-xl bg-gradient-to-br from-teal-50 via-white to-orange-50 dark:from-teal-950 dark:via-slate-900 dark:to-orange-950 flex items-center justify-center border border-teal-100/50 dark:border-teal-800/50">
               <div className="text-center">
                 <div className="w-16 h-16 rounded-lg bg-gradient-to-br from-teal-400 to-teal-500 mx-auto mb-2 flex items-center justify-center">
                   <Code2 className="w-7 h-7 text-white" />
@@ -102,7 +102,7 @@ export function ProjectModal({ project, onClose }: ProjectModalProps) {
               </div>
             </div>
 
-            <div className="rounded-lg border border-teal-100 bg-teal-50/30 p-4">
+            <div className="rounded-lg border border-teal-100 dark:border-teal-800 bg-teal-50/30 dark:bg-teal-950/30 p-4">
               <h4 className="text-sm font-bold text-accent mb-2">Performance Impact</h4>
               <p className="text-sm text-accent-dark font-medium">{project.performance}</p>
             </div>
