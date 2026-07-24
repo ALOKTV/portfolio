@@ -4,7 +4,7 @@ export const personalInfo = {
   location: "Bengaluru, India",
   email: "aloktvalok@gmail.com",
   phone: "+91 6362117360",
-  resumeUrl: "/resume.pdf",
+  resumeUrl: "/portfolio/resume.pdf",
   github: "https://github.com/ALOKTV",
   linkedin: "https://linkedin.com/in/alok-tv-2301ba237",
   bio: "Full Stack Engineer with 3 years of experience building scalable backend systems, REST APIs, and databases. Proficient in Node.js, TypeScript, Supabase (PostgreSQL), Firebase, and React.js. Hands-on experience with CI/CD pipelines, database migrations, A/B testing, Row Level Security enforcement, and delivering clean, production-grade code in collaborative Agile teams.",
