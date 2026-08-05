@@ -1,6 +1,18 @@
 import type { Metadata } from "next"
 import { ThemeProvider } from "next-themes"
+import { Outfit, Fira_Code } from "next/font/google"
+import { Global3DBg } from "@/components/global-3d-bg"
 import "./globals.css"
+
+const outfit = Outfit({
+  subsets: ["latin"],
+  variable: "--font-sans",
+})
+
+const firaCode = Fira_Code({
+  subsets: ["latin"],
+  variable: "--font-mono",
+})
 
 export const metadata: Metadata = {
   title: "Alok T V | Full Stack & Backend Engineer",
@@ -42,10 +54,14 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
-      <body>
-        <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
-          {children}
+    <html lang="en" suppressHydrationWarning className={`${outfit.variable} ${firaCode.variable}`}>
+      <body className="font-sans antialiased">
+        <ThemeProvider attribute="class" defaultTheme="light" enableSystem={false} disableTransitionOnChange>
+          <Global3DBg />
+          
+          <div className="relative z-0">
+            {children}
+          </div>
         </ThemeProvider>
       </body>
     </html>

@@ -41,7 +41,7 @@ export function TypingAnimation({ texts }: TypingAnimationProps) {
 
   return (
     <span className="relative inline-flex items-center">
-      <span className="gradient-text-orange">{displayText}</span>
+      <span className="gradient-text-emerald">{displayText}</span>
       <motion.span
         animate={{ opacity: [1, 0] }}
         transition={{ duration: 0.5, repeat: Infinity, repeatType: "reverse" }}

@@ -26,8 +26,8 @@ export function SkillsSection() {
               onClick={() => setActiveCategory(group.category)}
               className={`px-5 py-2 rounded-lg text-sm font-medium transition-all duration-300 cursor-pointer ${
                 activeCategory === group.category
-                  ? "bg-accent text-white shadow-md shadow-teal-200/50 dark:shadow-teal-900/50"
-                  : "bg-white dark:bg-slate-900 border border-border text-muted hover:text-foreground hover:border-teal-200 shadow-sm"
+                  ? "bg-indigo-600 dark:bg-indigo-500 text-white shadow-md shadow-indigo-200/50 dark:shadow-indigo-900/50"
+                  : "bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:text-slate-50 hover:border-indigo-200 shadow-sm"
               }`}
             >
               {group.category}
@@ -50,25 +50,25 @@ export function SkillsSection() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.3, delay: i * 0.05 }}
-                className="group relative rounded-xl border border-border bg-white dark:bg-slate-900 shadow-sm p-6 hover:shadow-md hover:border-teal-200 transition-all"
+                className="group relative rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 shadow-sm p-6 hover:shadow-md hover:border-indigo-200 transition-all"
               >
                 <div className="text-center">
-                  <div className="w-14 h-14 rounded-lg bg-gradient-to-br from-teal-50 to-teal-100 dark:from-teal-950 dark:to-teal-900 flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
-                    <span className="text-lg font-bold text-accent">
+                  <div className="w-14 h-14 rounded-lg bg-gradient-to-br from-indigo-50 to-indigo-100 dark:from-indigo-950 dark:to-indigo-900 flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
+                    <span className="text-lg font-bold text-indigo-600 dark:text-indigo-400">
                       {skill.name.substring(0, 2).toUpperCase()}
                     </span>
                   </div>
-                  <h4 className="text-sm font-bold text-foreground mb-1">{skill.name}</h4>
-                  <p className="text-xs text-muted">Proficiency</p>
+                  <h4 className="text-sm font-bold text-slate-900 dark:text-slate-50 mb-1">{skill.name}</h4>
+                  <p className="text-xs text-slate-600 dark:text-slate-400">Proficiency</p>
                 </div>
 
-                <div className="mt-5 h-2 rounded-full bg-teal-50 dark:bg-teal-950 overflow-hidden">
+                <div className="mt-5 h-2 rounded-full bg-indigo-50 dark:bg-indigo-950 overflow-hidden">
                   <motion.div
                     initial={{ width: 0 }}
                     whileInView={{ width: `${skill.level}%` }}
                     viewport={{ once: true }}
                     transition={{ duration: 1, delay: i * 0.1, ease: "easeOut" }}
-                    className="h-full rounded-full bg-gradient-to-r from-teal-500 to-teal-400"
+                    className="h-full rounded-full bg-gradient-to-r from-indigo-500 to-indigo-400"
                     style={{ width: `${skill.level}%` }}
                   />
                 </div>

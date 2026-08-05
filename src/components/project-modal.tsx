@@ -46,11 +46,11 @@ export function ProjectModal({ project, onClose }: ProjectModalProps) {
           exit={{ opacity: 0, scale: 0.95, y: 20 }}
           transition={{ duration: 0.3, ease: "easeOut" }}
           onClick={(e) => e.stopPropagation()}
-          className="relative w-full max-w-3xl max-h-[85vh] overflow-y-auto bg-white dark:bg-slate-900 rounded-xl p-6 md:p-8 shadow-2xl border border-border"
+          className="relative w-full max-w-3xl max-h-[85vh] overflow-y-auto bg-white dark:bg-slate-900 rounded-xl p-6 md:p-8 shadow-2xl border border-slate-200 dark:border-slate-800"
         >
           <button
             onClick={onClose}
-            className="absolute top-4 right-4 w-8 h-8 rounded-lg border border-border flex items-center justify-center hover:bg-surface-hover transition-colors cursor-pointer bg-white dark:bg-slate-900"
+            className="absolute top-4 right-4 w-8 h-8 rounded-lg border border-slate-200 dark:border-slate-800 flex items-center justify-center hover:bg-white dark:bg-slate-900-hover transition-colors cursor-pointer bg-white dark:bg-slate-900"
             aria-label="Close modal"
           >
             <X className="w-4 h-4" />
@@ -62,31 +62,31 @@ export function ProjectModal({ project, onClose }: ProjectModalProps) {
                 {project.tags.map((tag) => (
                   <span
                     key={tag}
-                    className="text-xs px-2.5 py-0.5 rounded-full bg-teal-50 dark:bg-teal-950 text-accent font-medium"
+                    className="text-xs px-2.5 py-0.5 rounded-full bg-indigo-50 dark:bg-indigo-950 text-indigo-600 dark:text-indigo-400 font-medium"
                   >
                     {tag}
                   </span>
                 ))}
               </div>
-              <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-2">{project.title}</h2>
-              <p className="text-muted">{project.longDescription}</p>
+              <h2 className="text-2xl md:text-3xl font-bold text-slate-900 dark:text-slate-50 mb-2">{project.title}</h2>
+              <p className="text-slate-600 dark:text-slate-400">{project.longDescription}</p>
             </div>
 
-            <div className="h-48 md:h-64 rounded-xl bg-gradient-to-br from-teal-50 via-white to-orange-50 dark:from-teal-950 dark:via-slate-900 dark:to-orange-950 flex items-center justify-center border border-teal-100/50 dark:border-teal-800/50">
+            <div className="h-48 md:h-64 rounded-xl bg-gradient-to-br from-indigo-50 via-white to-emerald-50 dark:from-indigo-950 dark:via-slate-900 dark:to-emerald-950 flex items-center justify-center border border-indigo-100/50 dark:border-indigo-800/50">
               <div className="text-center">
-                <div className="w-16 h-16 rounded-lg bg-gradient-to-br from-teal-400 to-teal-500 mx-auto mb-2 flex items-center justify-center">
+                <div className="w-16 h-16 rounded-lg bg-gradient-to-br from-indigo-400 to-indigo-500 mx-auto mb-2 flex items-center justify-center">
                   <Code2 className="w-7 h-7 text-white" />
                 </div>
-                <span className="text-sm text-muted font-medium">Project Screenshot</span>
+                <span className="text-sm text-slate-600 dark:text-slate-400 font-medium">Project Screenshot</span>
               </div>
             </div>
 
             <div>
-              <h3 className="text-lg font-bold text-foreground mb-3">Key Features</h3>
+              <h3 className="text-lg font-bold text-slate-900 dark:text-slate-50 mb-3">Key Features</h3>
               <div className="grid md:grid-cols-2 gap-3">
                 {project.features.map((feature, i) => (
-                  <div key={i} className="flex items-start gap-2 text-sm text-muted">
-                    <CheckCircle2 className="w-4 h-4 text-accent mt-0.5 shrink-0" />
+                  <div key={i} className="flex items-start gap-2 text-sm text-slate-600 dark:text-slate-400">
+                    <CheckCircle2 className="w-4 h-4 text-indigo-600 dark:text-indigo-400 mt-0.5 shrink-0" />
                     {feature}
                   </div>
                 ))}
@@ -94,28 +94,28 @@ export function ProjectModal({ project, onClose }: ProjectModalProps) {
             </div>
 
             <div className="grid md:grid-cols-2 gap-4">
-              <div className="rounded-lg border border-border bg-surface p-4">
-                <h4 className="text-sm font-bold text-foreground mb-2">Challenge</h4>
-                <p className="text-sm text-muted">{project.challenges}</p>
+              <div className="rounded-lg border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-4">
+                <h4 className="text-sm font-bold text-slate-900 dark:text-slate-50 mb-2">Challenge</h4>
+                <p className="text-sm text-slate-600 dark:text-slate-400">{project.challenges}</p>
               </div>
-              <div className="rounded-lg border border-border bg-surface p-4">
-                <h4 className="text-sm font-bold text-foreground mb-2">Solution</h4>
-                <p className="text-sm text-muted">{project.solutions}</p>
+              <div className="rounded-lg border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-4">
+                <h4 className="text-sm font-bold text-slate-900 dark:text-slate-50 mb-2">Solution</h4>
+                <p className="text-sm text-slate-600 dark:text-slate-400">{project.solutions}</p>
               </div>
             </div>
 
-            <div className="rounded-lg border border-teal-100 dark:border-teal-800 bg-teal-50/30 dark:bg-teal-950/30 p-4">
-              <h4 className="text-sm font-bold text-accent mb-2">Performance Impact</h4>
-              <p className="text-sm text-accent-dark font-medium">{project.performance}</p>
+            <div className="rounded-lg border border-indigo-100 dark:border-indigo-800 bg-indigo-50/30 dark:bg-indigo-950/30 p-4">
+              <h4 className="text-sm font-bold text-indigo-600 dark:text-indigo-400 mb-2">Performance Impact</h4>
+              <p className="text-sm text-indigo-600 dark:text-indigo-400-dark font-medium">{project.performance}</p>
             </div>
 
             <div>
-              <h3 className="text-sm font-bold text-foreground mb-3">Tech Stack</h3>
+              <h3 className="text-sm font-bold text-slate-900 dark:text-slate-50 mb-3">Tech Stack</h3>
               <div className="flex flex-wrap gap-2">
                 {project.techStack.map((tech) => (
                   <span
                     key={tech}
-                    className="text-xs px-3 py-1.5 rounded-lg bg-surface border border-border text-muted font-medium"
+                    className="text-xs px-3 py-1.5 rounded-lg bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-slate-600 dark:text-slate-400 font-medium"
                   >
                     {tech}
                   </span>

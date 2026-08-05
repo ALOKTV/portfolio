@@ -29,17 +29,17 @@ export function TestimonialsSection() {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -20 }}
               transition={{ duration: 0.4 }}
-              className="rounded-xl border border-border bg-white dark:bg-slate-900 shadow-sm p-8 md:p-12 text-center"
+              className="rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 shadow-sm p-8 md:p-12 text-center"
             >
-              <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-teal-50 to-teal-100 dark:from-teal-950 dark:to-teal-900 flex items-center justify-center mx-auto mb-6">
-                <Quote className="w-5 h-5 text-accent" />
+              <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-indigo-50 to-indigo-100 dark:from-indigo-950 dark:to-indigo-900 flex items-center justify-center mx-auto mb-6">
+                <Quote className="w-5 h-5 text-indigo-600 dark:text-indigo-400" />
               </div>
-              <p className="text-base md:text-lg text-muted leading-relaxed mb-8 italic">
+              <p className="text-base md:text-lg text-slate-600 dark:text-slate-400 leading-relaxed mb-8 italic">
                 &ldquo;{testimonials[current].content}&rdquo;
               </p>
               <div>
-                <p className="font-bold text-foreground">{testimonials[current].name}</p>
-                <p className="text-sm text-muted">
+                <p className="font-bold text-slate-900 dark:text-slate-50">{testimonials[current].name}</p>
+                <p className="text-sm text-slate-600 dark:text-slate-400">
                   {testimonials[current].role}, {testimonials[current].company}
                 </p>
               </div>
@@ -49,7 +49,7 @@ export function TestimonialsSection() {
           <div className="flex items-center justify-center gap-4 mt-6">
             <button
               onClick={prev}
-              className="w-10 h-10 rounded-lg border border-border bg-white dark:bg-slate-900 flex items-center justify-center hover:border-teal-200 hover:text-accent transition-colors cursor-pointer shadow-sm"
+              className="w-10 h-10 rounded-lg border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 flex items-center justify-center hover:border-indigo-200 hover:text-indigo-600 dark:text-indigo-400 transition-colors cursor-pointer shadow-sm"
               aria-label="Previous"
             >
               <ChevronLeft className="w-4 h-4" />
@@ -60,7 +60,7 @@ export function TestimonialsSection() {
                   key={i}
                   onClick={() => setCurrent(i)}
                   className={`rounded-full transition-all duration-300 cursor-pointer ${
-                    i === current ? "bg-accent w-6 h-2" : "bg-border w-2 h-2 hover:bg-teal-200"
+                    i === current ? "bg-indigo-600 dark:bg-indigo-500 w-6 h-2" : "bg-border w-2 h-2 hover:bg-indigo-200"
                   }`}
                   aria-label={`Go to testimonial ${i + 1}`}
                 />
@@ -68,7 +68,7 @@ export function TestimonialsSection() {
             </div>
             <button
               onClick={next}
-              className="w-10 h-10 rounded-lg border border-border bg-white dark:bg-slate-900 flex items-center justify-center hover:border-teal-200 hover:text-accent transition-colors cursor-pointer shadow-sm"
+              className="w-10 h-10 rounded-lg border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 flex items-center justify-center hover:border-indigo-200 hover:text-indigo-600 dark:text-indigo-400 transition-colors cursor-pointer shadow-sm"
               aria-label="Next"
             >
               <ChevronRight className="w-4 h-4" />

@@ -5,8 +5,8 @@ import { SectionHeader } from "./section-header"
 import { techStack } from "@/data/portfolio"
 
 const categoryColors: Record<string, string> = {
-  Frontend: "bg-teal-50 dark:bg-teal-950 text-accent border-teal-200/50 dark:border-teal-800/50",
-  Backend: "bg-orange-50 dark:bg-orange-950 text-secondary border-orange-200/50 dark:border-orange-800/50",
+  Frontend: "bg-indigo-50 dark:bg-indigo-950 text-indigo-600 dark:text-indigo-400 border-indigo-200/50 dark:border-indigo-800/50",
+  Backend: "bg-emerald-50 dark:bg-emerald-950 text-secondary border-emerald-200/50 dark:border-emerald-800/50",
   Language: "bg-blue-50 dark:bg-blue-950 text-blue-700 dark:text-blue-300 border-blue-200/50 dark:border-blue-800/50",
   Database: "bg-purple-50 dark:bg-purple-950 text-purple-700 dark:text-purple-300 border-purple-200/50 dark:border-purple-800/50",
   DevOps: "bg-slate-50 dark:bg-slate-800 text-slate-700 dark:text-slate-300 border-slate-200/50 dark:border-slate-700/50",
@@ -35,7 +35,7 @@ export function TechStackSection() {
               transition={{ duration: 0.3, delay: i * 0.03 }}
               whileHover={{ scale: 1.05, y: -3 }}
               className={`rounded-lg border px-4 py-3 shadow-sm hover:shadow-md transition-all cursor-default ${
-                categoryColors[tech.category] || "bg-white dark:bg-slate-900 border-border text-muted"
+                categoryColors[tech.category] || "bg-white dark:bg-slate-900 border-slate-200 dark:border-slate-800 text-slate-600 dark:text-slate-400"
               }`}
             >
               <span className="text-sm font-semibold">{tech.name}</span>

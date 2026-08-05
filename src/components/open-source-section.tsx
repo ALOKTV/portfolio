@@ -23,19 +23,19 @@ export function OpenSourceSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
               transition={{ duration: 0.4, delay: i * 0.1 }}
-              className="rounded-xl border border-border bg-white dark:bg-slate-900 shadow-sm p-6 hover:shadow-md hover:border-teal-200 transition-all"
+              className="rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 shadow-sm p-6 hover:shadow-md hover:border-indigo-200 transition-all"
             >
               <div className="flex items-start justify-between mb-3">
                 <div className="flex items-center gap-2">
-                  <Code2 className="w-4 h-4 text-accent" />
-                  <h3 className="font-semibold text-foreground text-sm">{repo.name}</h3>
+                  <Code2 className="w-4 h-4 text-indigo-600 dark:text-indigo-400" />
+                  <h3 className="font-semibold text-slate-900 dark:text-slate-50 text-sm">{repo.name}</h3>
                 </div>
-                <span className="text-xs px-2.5 py-0.5 rounded-full bg-teal-50 dark:bg-teal-950 text-accent font-medium">
+                <span className="text-xs px-2.5 py-0.5 rounded-full bg-indigo-50 dark:bg-indigo-950 text-indigo-600 dark:text-indigo-400 font-medium">
                   {repo.language}
                 </span>
               </div>
-              <p className="text-sm text-muted mb-4">{repo.description}</p>
-              <div className="flex items-center gap-4 text-xs text-muted">
+              <p className="text-sm text-slate-600 dark:text-slate-400 mb-4">{repo.description}</p>
+              <div className="flex items-center gap-4 text-xs text-slate-600 dark:text-slate-400">
                 <span className="flex items-center gap-1.5">
                   <Star className="w-3.5 h-3.5" />
                   {repo.stars}
