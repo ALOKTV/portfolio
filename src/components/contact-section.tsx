@@ -1,24 +1,17 @@
 "use client"
 
-import { useState } from "react"
 import { motion } from "framer-motion"
-import { Send, Code2, Globe, Mail, MapPin, FileText } from "lucide-react"
+import { Code2, Globe, Mail, MapPin, FileText } from "lucide-react"
 import { SectionHeader } from "./section-header"
 import { personalInfo } from "@/data/portfolio"
 
 export function ContactSection() {
-  const [submitted, setSubmitted] = useState(false)
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault()
-    setSubmitted(true)
-    setTimeout(() => setSubmitted(false), 3000)
-  }
+  const emailLink = "https://mail.google.com/mail/?view=cm&fs=1&to=" + encodeURIComponent(personalInfo.email)
 
   const socialLinks = [
     { icon: Code2, href: personalInfo.github, label: "GitHub" },
     { icon: Globe, href: personalInfo.linkedin, label: "LinkedIn" },
-    { icon: Mail, href: `mailto:${personalInfo.email}`, label: "Email" },
+    { icon: Mail, href: emailLink, label: "Email" },
     { icon: FileText, href: personalInfo.resumeUrl, label: "Resume" },
   ]
 
@@ -40,71 +33,19 @@ export function ContactSection() {
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.5 }}
           >
-            <form onSubmit={handleSubmit} className="space-y-4">
-              <div className="grid md:grid-cols-2 gap-4">
-                <div>
-                  <label htmlFor="name" className="block text-sm font-medium text-foreground mb-1.5">
-                    Name
-                  </label>
-                  <input
-                    id="name"
-                    type="text"
-                    required
-                    placeholder="Your name"
-                    className="w-full px-4 py-3 rounded-lg border border-border bg-white dark:bg-slate-900 text-foreground placeholder:text-muted-light focus:outline-none focus:ring-2 focus:ring-accent/20 focus:border-accent transition-all shadow-sm"
-                  />
-                </div>
-                <div>
-                  <label htmlFor="email" className="block text-sm font-medium text-foreground mb-1.5">
-                    Email
-                  </label>
-                  <input
-                    id="email"
-                    type="email"
-                    required
-                    placeholder="your@email.com"
-                    className="w-full px-4 py-3 rounded-lg border border-border bg-white dark:bg-slate-900 text-foreground placeholder:text-muted-light focus:outline-none focus:ring-2 focus:ring-accent/20 focus:border-accent transition-all shadow-sm"
-                  />
-                </div>
+            <div className="rounded-xl border border-border bg-white dark:bg-slate-900 shadow-sm p-6 md:p-8">
+              <div className="w-12 h-12 rounded-lg bg-teal-50 dark:bg-teal-950 flex items-center justify-center mb-5">
+                <Mail className="w-5 h-5 text-accent" />
               </div>
-              <div>
-                <label htmlFor="subject" className="block text-sm font-medium text-foreground mb-1.5">
-                  Subject
-                </label>
-                <input
-                  id="subject"
-                  type="text"
-                  required
-                  placeholder="What's this about?"
-                  className="w-full px-4 py-3 rounded-lg border border-border bg-white dark:bg-slate-900 text-foreground placeholder:text-muted-light focus:outline-none focus:ring-2 focus:ring-accent/20 focus:border-accent transition-all shadow-sm"
-                />
-              </div>
-              <div>
-                <label htmlFor="message" className="block text-sm font-medium text-foreground mb-1.5">
-                  Message
-                </label>
-                <textarea
-                  id="message"
-                  required
-                  rows={5}
-                  placeholder="Your message..."
-                  className="w-full px-4 py-3 rounded-lg border border-border bg-white dark:bg-slate-900 text-foreground placeholder:text-muted-light focus:outline-none focus:ring-2 focus:ring-accent/20 focus:border-accent transition-all shadow-sm resize-none"
-                />
-              </div>
-              <button
-                type="submit"
-                className="btn-primary w-full justify-center"
-              >
-                {submitted ? (
-                  "Message sent!"
-                ) : (
-                  <>
-                    <Send className="w-4 h-4" />
-                    Send Message
-                  </>
-                )}
-              </button>
-            </form>
+              <h3 className="text-xl font-bold text-foreground mb-2">Send Mail</h3>
+              <p className="text-sm text-muted leading-relaxed mb-6">
+                Reach me directly at <span className="font-semibold text-foreground">{personalInfo.email}</span>.
+              </p>
+              <a href={emailLink} target="_blank" rel="noopener noreferrer" className="btn-primary w-full justify-center">
+                <Mail className="w-4 h-4" />
+                Send Mail
+              </a>
+            </div>
           </motion.div>
 
           <motion.div

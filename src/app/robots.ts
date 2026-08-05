@@ -6,8 +6,8 @@ export default function robots(): MetadataRoute.Robots {
   return {
     rules: {
       userAgent: "*",
-      allow: "/",
+      allow: "/portfolio/",
     },
-    sitemap: "https://aloktv.dev/sitemap.xml",
+    sitemap: "https://aloktv.dev/portfolio/sitemap.xml",
   }
 }

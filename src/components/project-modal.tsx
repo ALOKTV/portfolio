@@ -3,6 +3,8 @@
 import { motion, AnimatePresence } from "framer-motion"
 import { X, ExternalLink, Code2, CheckCircle2 } from "lucide-react"
 
+const hasLiveDemo = (live: string) => live.trim() !== "" && live !== "#"
+
 interface Project {
   id: string
   title: string
@@ -131,15 +133,17 @@ export function ProjectModal({ project, onClose }: ProjectModalProps) {
                 <Code2 className="w-4 h-4" />
                 View Code
               </a>
-              <a
-                href={project.live}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn-primary text-sm"
-              >
-                <ExternalLink className="w-4 h-4" />
-                Live Demo
-              </a>
+              {hasLiveDemo(project.live) ? (
+                <a
+                  href={project.live}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn-primary text-sm"
+                >
+                  <ExternalLink className="w-4 h-4" />
+                  Live Demo
+                </a>
+              ) : null}
             </div>
           </div>
         </motion.div>

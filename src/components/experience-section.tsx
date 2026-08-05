@@ -1,7 +1,7 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { Calendar } from "lucide-react"
+import { Calendar, ExternalLink } from "lucide-react"
 import { SectionHeader } from "./section-header"
 import { experiences } from "@/data/portfolio"
 
@@ -36,7 +36,20 @@ export function ExperienceSection() {
                     {exp.duration}
                   </div>
                   <h3 className="text-xl font-bold text-foreground mb-1">{exp.role}</h3>
-                  <p className="text-accent font-medium text-sm mb-4">{exp.company}</p>
+                  <div className="flex flex-wrap items-center gap-3 mb-4">
+                    <p className="text-accent font-medium text-sm">{exp.company}</p>
+                    {exp.link ? (
+                      <a
+                        href={exp.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-1.5 text-xs font-medium text-muted hover:text-accent transition-colors"
+                      >
+                        <ExternalLink className="w-3.5 h-3.5" />
+                        {exp.linkLabel ?? "Explore"}
+                      </a>
+                    ) : null}
+                  </div>
                   <p className="text-muted text-sm leading-relaxed mb-4">
                     {exp.description}
                   </p>

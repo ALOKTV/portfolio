@@ -10,7 +10,7 @@ export const personalInfo = {
   bio: "Full Stack Engineer with 3 years of experience building scalable backend systems, REST APIs, and databases. Proficient in Node.js, TypeScript, Supabase (PostgreSQL), Firebase, and React.js. Hands-on experience with CI/CD pipelines, database migrations, A/B testing, Row Level Security enforcement, and delivering clean, production-grade code in collaborative Agile teams.",
   shortBio: "Full Stack & Backend Engineer specializing in Node.js, TypeScript, Supabase, Firebase, and React.js. I build scalable backend systems and clean, production-grade web applications.",
   experience: "3+ Years",
-  projectsBuilt: 8,
+  projectsBuilt: 9,
   technologies: 15,
   contributions: "300+",
 };
@@ -91,6 +91,8 @@ export const experiences = [
   {
     company: "Chimple Learning (CUBA App)",
     role: "Software Engineer",
+    link: "https://cuba-stage.web.app/",
+    linkLabel: "Explore CUBA App",
     duration: "2022 – Present",
     location: "Bengaluru",
     description: "Building and maintaining backend systems for an interactive educational platform serving children. Working across the full stack with a focus on database architecture, API development, and DevOps.",
@@ -111,6 +113,31 @@ export const experiences = [
 
 export const projects = [
   {
+    id: "resume-optimiser",
+    title: "Resume Optimiser",
+    description:
+      "A web app for reviewing and improving resumes with structured feedback, clearer wording, and role-focused optimization.",
+    longDescription:
+      "A resume optimisation tool built to help candidates refine resumes for clarity, relevance, and impact. It focuses on practical suggestions for content structure, keyword alignment, and concise professional wording.",
+    image: "/projects/resume-optimiser.jpg",
+    tags: ["React", "TypeScript", "AI"],
+    features: [
+      "Resume review workflow with actionable improvement suggestions",
+      "Role-focused optimization for stronger keyword alignment",
+      "Clearer wording recommendations for professional summaries and bullet points",
+      "Responsive web interface for quick resume iteration",
+    ],
+    challenges:
+      "Turning resume feedback into specific, useful edits without overwhelming the user",
+    solutions:
+      "Structured the experience around concise suggestions, priority areas, and direct wording improvements",
+    performance:
+      "Fast static deployment through GitHub Pages for easy public access",
+    github: "https://github.com/ALOKTV/resume-optimiser",
+    live: "https://aloktv.github.io/resume-optimiser/",
+    techStack: ["React", "TypeScript", "AI", "GitHub Pages"],
+  },
+  {
     id: "crysta",
     title: "Crysta — Personal AI Agent",
     description: "A voice-enabled personal agent that answers questions and automates tasks such as setting alarms, playing music, and web search.",
@@ -126,8 +153,8 @@ export const projects = [
     challenges: "Integrating multiple AI APIs for reliable natural language understanding",
     solutions: "Architected a modular API integration layer with fallback mechanisms and secure credential handling",
     performance: "Sub-second response time for common queries",
-    github: "https://github.com/ALOKTV",
-    live: "#",
+    github: "https://github.com/ALOKTV/Crystal",
+    live: "https://aloktv.github.io/Crystal/",
     techStack: ["Java", "REST APIs", "AI APIs", "Environment-based Config"],
   },
   {

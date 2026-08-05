@@ -9,6 +9,8 @@ import { projects } from "@/data/portfolio"
 
 const filterTags = ["All", "Python", "Java", "JavaScript", "Node.js", "REST APIs", "AI", "Computer Vision"]
 
+const hasLiveDemo = (live: string) => live.trim() !== "" && live !== "#"
+
 export function ProjectsSection() {
   const [activeFilter, setActiveFilter] = useState("All")
   const [selectedProject, setSelectedProject] = useState<(typeof projects)[0] | null>(null)
@@ -103,16 +105,18 @@ export function ProjectsSection() {
                       <Code2 className="w-3.5 h-3.5" />
                       Code
                     </a>
-                    <a
-                      href={project.live}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      onClick={(e) => e.stopPropagation()}
-                      className="flex items-center gap-1.5 hover:text-accent transition-colors font-medium"
-                    >
-                      <ExternalLink className="w-3.5 h-3.5" />
-                      Live Demo
-                    </a>
+                    {hasLiveDemo(project.live) ? (
+                      <a
+                        href={project.live}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        onClick={(e) => e.stopPropagation()}
+                        className="flex items-center gap-1.5 hover:text-accent transition-colors font-medium"
+                      >
+                        <ExternalLink className="w-3.5 h-3.5" />
+                        Live Demo
+                      </a>
+                    ) : null}
                     <span className="flex items-center gap-1 text-accent ml-auto font-medium">
                       Details
                       <ArrowUpRight className="w-3 h-3" />
